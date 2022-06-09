@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 # 本文件为例子，展示本作业的编程LogisticRegression如何使用
 # 首先导入LogisticRegression
-from LogisticReg import *
+from LogisticReg import LogisticRegression
 
 # 读入数据
 df = pd.read_csv('BreastCancerData.csv',encoding='utf-8')
