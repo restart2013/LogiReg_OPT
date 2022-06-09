@@ -158,7 +158,7 @@ class LogisticRegression:
         param_line = []
         delta_line = []
         loss_line = []
-        param_line.append((self.w, self.b))
+        param_line.append((self.w.copy(), self.b.copy()))
         ypred = self.predict(x)
         loss = self.logloss(y, ypred)
         loss_line.append(loss)
@@ -198,7 +198,7 @@ class LogisticRegression:
                 else:
                     g_w_last, g_b_last, G_w, G_b, delta_w, delta_b = self.dfp(x, y, lr, g_w_last, g_b_last, G_w, G_b,
                                                                               delta_w, delta_b)
-            param_line.append((self.w, self.b))
+            param_line.append((self.w.copy(), self.b.copy()))
             ypred = self.predict(x)
             loss = self.logloss(y, ypred)
             loss_line.append(loss)
@@ -322,7 +322,7 @@ class LogisticRegression_L1:
         param_line = []
         delta_line = []
         loss_line = []
-        param_line.append((self.w, self.b))
+        param_line.append((self.w.copy(), self.b.copy()))
         ypred = self.predict(x)
         loss = self.logloss(y, ypred)
         loss_line.append(loss)
@@ -352,7 +352,7 @@ class LogisticRegression_L1:
                 else:
                     g_w_last, g_b_last, G_w, G_b, delta_w, delta_b = self.dfp(x, y, lr, g_w_last, g_b_last, G_w, G_b,
                                                                               delta_w, delta_b)
-            param_line.append((self.w, self.b))
+            param_line.append((self.w.copy(), self.b.copy()))
             ypred = self.predict(x)
             loss = self.logloss(y, ypred)
             loss_line.append(loss)
